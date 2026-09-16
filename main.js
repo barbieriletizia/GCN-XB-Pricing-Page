@@ -1,0 +1,261 @@
+(function () {
+  var body = document.body;
+
+  var FX_PER_USD = {
+    USD: 1,
+    HKD: 7.841,
+    GBP: 0.7387,
+    SGD: 1.2647
+  };
+
+  function convertAmount(amount, from, to) {
+    return (amount / FX_PER_USD[from]) * FX_PER_USD[to];
+  }
+
+  function formatMoney(amount, ccy) {
+    var rounded = Math.round(amount * 100) / 100;
+    if (rounded > 0 && rounded < 1) {
+      var minor = Math.round(rounded * 100);
+      if (ccy === "USD") return minor + "¢";
+      if (ccy === "GBP") return minor + "p";
+    }
+    var formatted = rounded.toLocaleString("en-US", {
+      minimumFractionDigits: rounded % 1 === 0 ? 0 : 2,
+      maximumFractionDigits: 2
+    });
+    if (ccy === "USD") return "US$" + formatted;
+    if (ccy === "HKD") return "HK$" + formatted;
+    if (ccy === "GBP") return "£" + formatted;
+    if (ccy === "SGD") return "S$" + formatted;
+    return formatted;
+  }
+
+  function applyCurrency(code) {
+    document.querySelectorAll(".money").forEach(function (el) {
+      if (!el.hasAttribute("data-local-text")) {
+        el.setAttribute("data-local-text", el.textContent);
+      }
+      var localText = el.getAttribute("data-local-text");
+      if (code === "local") {
+        el.textContent = localText;
+        el.removeAttribute("title");
+        return;
+      }
+      var from = el.getAttribute("data-ccy");
+      var amount = parseFloat(el.getAttribute("data-amount"), 10);
+      el.textContent = formatMoney(convertAmount(amount, from, code), code);
+      el.setAttribute("title", "Published as " + localText);
+    });
+  }
+
+  var currencySelect = document.querySelector("[data-currency-select]");
+  if (currencySelect) {
+    currencySelect.addEventListener("change", function () {
+      applyCurrency(currencySelect.value);
+    });
+  }
+
+  var menuBtn = document.querySelector("[data-menu-toggle]");
+  if (menuBtn) {
+    menuBtn.addEventListener("click", function () {
+      body.classList.toggle("nav-open");
+      menuBtn.setAttribute(
+        "aria-expanded",
+        body.classList.contains("nav-open") ? "true" : "false"
+      );
+      menuBtn.setAttribute(
+        "aria-label",
+        body.classList.contains("nav-open") ? "Close menu" : "Toggle navigation menu"
+      );
+    });
+  }
+
+  var COUNTRIES = [
+    { code: "hk", name: "Hong Kong" },
+    { code: "us", name: "United States" },
+    { code: "gb", name: "United Kingdom" },
+    { code: "sg", name: "Singapore" }
+  ];
+  var ALL_CODES = COUNTRIES.map(function (c) {
+    return c.code;
+  });
+  var SLOT_LABELS = [
+    "First country to compare",
+    "Second country to compare"
+  ];
+  var slots = ["hk", "us"];
+
+  function countryName(code) {
+    for (var i = 0; i < COUNTRIES.length; i += 1) {
+      if (COUNTRIES[i].code === code) return COUNTRIES[i].name;
+    }
+    return code;
+  }
+
+  function optionHtml(selectedCode) {
+    return COUNTRIES.map(function (c) {
+      var selected = c.code === selectedCode ? " selected" : "";
+      var disabled =
+        slots.indexOf(c.code) !== -1 && c.code !== selectedCode ? " disabled" : "";
+      return (
+        '<option value="' +
+        c.code +
+        '"' +
+        selected +
+        disabled +
+        ">" +
+        c.name +
+        "</option>"
+      );
+    }).join("");
+  }
+
+  function reorderRow(row) {
+    var cells = {};
+    ALL_CODES.forEach(function (code) {
+      cells[code] = row.querySelector(".col-" + code);
+    });
+    slots.forEach(function (code) {
+      if (cells[code]) row.appendChild(cells[code]);
+    });
+    ALL_CODES.forEach(function (code) {
+      if (slots.indexOf(code) === -1 && cells[code]) row.appendChild(cells[code]);
+    });
+  }
+
+  function markEdgeColumns() {
+    document.querySelectorAll(".is-first-compare-col, .is-last-compare-col").forEach(function (el) {
+      el.classList.remove("is-first-compare-col", "is-last-compare-col");
+    });
+    document.querySelectorAll(".cmp tr").forEach(function (row) {
+      var first = row.querySelector(".col-" + slots[0]);
+      var last = row.querySelector(".col-" + slots[slots.length - 1]);
+      if (first) first.classList.add("is-first-compare-col");
+      if (last) last.classList.add("is-last-compare-col");
+    });
+  }
+
+  function renderSelects() {
+    document.querySelectorAll(".compare-picker__slot").forEach(function (el, index) {
+      var select = el.querySelector("select");
+      var label = el.querySelector("label");
+      if (!select) return;
+      select.innerHTML = optionHtml(slots[index]);
+      if (label) {
+        label.setAttribute("for", select.id);
+        label.textContent = SLOT_LABELS[index];
+      }
+    });
+    document.querySelectorAll("#capabilities .cmp thead").forEach(function (thead) {
+      ALL_CODES.forEach(function (code) {
+        var th = thead.querySelector(".col-" + code);
+        if (th) th.textContent = countryName(code);
+      });
+    });
+  }
+
+  function applySlots() {
+    ALL_CODES.forEach(function (code) {
+      body.classList.toggle("cols-" + code, slots.indexOf(code) !== -1);
+    });
+    document.querySelectorAll(".cmp").forEach(function (table) {
+      var colgroup = table.querySelector("colgroup");
+      if (colgroup) {
+        var cols = {};
+        ALL_CODES.forEach(function (code) {
+          cols[code] = colgroup.querySelector(".cmp__col-" + code);
+        });
+        slots.forEach(function (code) {
+          if (cols[code]) colgroup.appendChild(cols[code]);
+        });
+        ALL_CODES.forEach(function (code) {
+          if (slots.indexOf(code) === -1 && cols[code]) colgroup.appendChild(cols[code]);
+        });
+      }
+      table.querySelectorAll("tr").forEach(reorderRow);
+    });
+    markEdgeColumns();
+    renderSelects();
+  }
+
+  var capabilities = document.getElementById("capabilities");
+  if (capabilities) {
+    applySlots();
+    var searchInput = capabilities.querySelector("[data-capability-search]");
+    var searchEmpty = capabilities.querySelector("[data-search-empty]");
+    var searchStatus = capabilities.querySelector("[data-search-status]");
+
+    function rowSearchText(row) {
+      var name = row.querySelector(".product-name");
+      var desc = row.querySelector(".product-desc");
+      return (
+        (name ? name.textContent : "") +
+        " " +
+        (desc ? desc.textContent : "")
+      ).toLowerCase();
+    }
+
+    function applySearch(query) {
+      query = (query || "").trim().toLowerCase();
+      var matchCount = 0;
+      capabilities.querySelectorAll(".capability-block").forEach(function (block) {
+        var head = block.querySelector(".capability-block__head");
+        var headText = head ? head.textContent.toLowerCase() : "";
+        var headMatch = query !== "" && headText.indexOf(query) !== -1;
+        var visible = 0;
+        block.querySelectorAll("tbody tr").forEach(function (row) {
+          var match =
+            query === "" || headMatch || rowSearchText(row).indexOf(query) !== -1;
+          row.hidden = !match;
+          if (match) visible += 1;
+        });
+        block.hidden = query !== "" && visible === 0;
+        matchCount += visible;
+      });
+      if (searchEmpty) {
+        searchEmpty.hidden = query === "" || matchCount > 0;
+        searchEmpty.textContent =
+          matchCount > 0
+            ? "No products match your search."
+            : 'No products match “' + (query || "") + '”.';
+      }
+      if (searchStatus) {
+        if (query === "") {
+          searchStatus.textContent = "";
+        } else if (matchCount === 0) {
+          searchStatus.textContent = "No products match “" + query + "”.";
+        } else {
+          searchStatus.textContent =
+            matchCount + (matchCount === 1 ? " product" : " products") + " match “" + query + "”.";
+        }
+      }
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener("input", function () {
+        applySearch(searchInput.value);
+      });
+      searchInput.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          searchInput.value = "";
+          applySearch("");
+        }
+        if (event.key === "Enter") {
+          event.preventDefault();
+        }
+      });
+    }
+    capabilities.addEventListener("change", function (event) {
+      var select = event.target.closest("[data-compare-slot]");
+      if (!select) return;
+      var slot = parseInt(select.getAttribute("data-compare-slot"), 10);
+      var next = select.value;
+      if (slots.indexOf(next) !== -1) {
+        select.value = slots[slot];
+        return;
+      }
+      slots[slot] = next;
+      applySlots();
+    });
+  }
+})();
