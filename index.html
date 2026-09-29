@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
     <title>Compare pricing by country · Stripe</title>
-    <link rel="stylesheet" href="styles.css?v=price-link-12" />
+    <link rel="stylesheet" href="styles.css?v=compare-head-mid1" />
   </head>
-  <body class="cols-hk cols-us">
+  <body class="cols-hk cols-us compare-count-2">
     <header class="home-header site-header">
       <div class="home-header-container">
         <div class="header-inner">
@@ -343,6 +343,17 @@
                   <option value="hk" disabled>Hong Kong</option>
                   <option value="us" selected>United States</option>
                   <option value="gb">United Kingdom</option>
+                  <option value="sg">Singapore</option>
+                </select>
+              </div>
+            </div>
+            <div class="compare-picker__slot">
+              <label class="sr-only" for="compare-slot-2">Third country to compare</label>
+              <div class="compare-select-wrap">
+                <select id="compare-slot-2" class="compare-select" data-compare-slot="2">
+                  <option value="hk" disabled>Hong Kong</option>
+                  <option value="us" disabled>United States</option>
+                  <option value="gb" selected>United Kingdom</option>
                   <option value="sg">Singapore</option>
                 </select>
               </div>
@@ -3354,6 +3365,15 @@
     </footer>
     </div>
 
-    <script src="main.js?v=compare-two-1"></script>
+    <aside class="playground" aria-label="Layout playground">
+      <p class="playground__kicker">Playground</p>
+      <p class="playground__label">Country columns</p>
+      <div class="playground__toggle" role="group" aria-label="Number of country columns">
+        <button type="button" class="playground__btn is-active" data-compare-count="2" aria-pressed="true">2</button>
+        <button type="button" class="playground__btn" data-compare-count="3" aria-pressed="false">3</button>
+      </div>
+    </aside>
+
+    <script src="main.js?v=compare-count-1"></script>
   </body>
 </html>

@@ -81,9 +81,20 @@
   });
   var SLOT_LABELS = [
     "First country to compare",
-    "Second country to compare"
+    "Second country to compare",
+    "Third country to compare"
   ];
   var slots = ["hk", "us"];
+  var COMPARE_COUNT_KEY = "compare-count";
+  try {
+    if (parseInt(localStorage.getItem(COMPARE_COUNT_KEY), 10) === 3) {
+      slots = ["hk", "us", "gb"];
+      body.classList.remove("compare-count-2");
+      body.classList.add("compare-count-3");
+    }
+  } catch (err) {
+    /* ignore */
+  }
 
   function countryName(code) {
     for (var i = 0; i < COUNTRIES.length; i += 1) {
@@ -139,7 +150,7 @@
     document.querySelectorAll(".compare-picker__slot").forEach(function (el, index) {
       var select = el.querySelector("select");
       var label = el.querySelector("label");
-      if (!select) return;
+      if (!select || index >= slots.length) return;
       select.innerHTML = optionHtml(slots[index]);
       if (label) {
         label.setAttribute("for", select.id);
@@ -249,6 +260,7 @@
       var select = event.target.closest("[data-compare-slot]");
       if (!select) return;
       var slot = parseInt(select.getAttribute("data-compare-slot"), 10);
+      if (slot >= slots.length) return;
       var next = select.value;
       if (slots.indexOf(next) !== -1) {
         select.value = slots[slot];
@@ -258,4 +270,51 @@
       applySlots();
     });
   }
+
+  function unusedCountry() {
+    for (var i = 0; i < ALL_CODES.length; i += 1) {
+      if (slots.indexOf(ALL_CODES[i]) === -1) return ALL_CODES[i];
+    }
+    return ALL_CODES[0];
+  }
+
+  function compareCount() {
+    return slots.length === 3 ? 3 : 2;
+  }
+
+  function syncPlayground() {
+    var count = compareCount();
+    document.querySelectorAll("[data-compare-count]").forEach(function (btn) {
+      var active = parseInt(btn.getAttribute("data-compare-count"), 10) === count;
+      btn.classList.toggle("is-active", active);
+      btn.setAttribute("aria-pressed", active ? "true" : "false");
+    });
+  }
+
+  function setCompareCount(next) {
+    next = next === 3 ? 3 : 2;
+    if (next === 3 && slots.length < 3) {
+      slots.push(unusedCountry());
+    }
+    if (next === 2 && slots.length > 2) {
+      slots.length = 2;
+    }
+    body.classList.toggle("compare-count-2", next === 2);
+    body.classList.toggle("compare-count-3", next === 3);
+    try {
+      localStorage.setItem(COMPARE_COUNT_KEY, String(next));
+    } catch (err) {
+      /* ignore quota / private mode */
+    }
+    applySlots();
+    syncPlayground();
+  }
+
+  document.querySelectorAll("[data-compare-count]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      setCompareCount(parseInt(btn.getAttribute("data-compare-count"), 10));
+    });
+  });
+
+  syncPlayground();
 })();
