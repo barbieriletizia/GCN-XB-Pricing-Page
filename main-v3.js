@@ -81,9 +81,10 @@
   });
   var SLOT_LABELS = [
     "First country to compare",
-    "Second country to compare"
+    "Second country to compare",
+    "Third country to compare"
   ];
-  var slots = ["hk", "us"];
+  var slots = ["hk", "us", "gb"];
 
   function countryName(code) {
     for (var i = 0; i < COUNTRIES.length; i += 1) {
@@ -128,10 +129,12 @@
       el.classList.remove("is-first-compare-col", "is-last-compare-col");
     });
     document.querySelectorAll(".cmp tr").forEach(function (row) {
-      var first = row.querySelector(".col-" + slots[0]);
-      var last = row.querySelector(".col-" + slots[slots.length - 1]);
-      if (first) first.classList.add("is-first-compare-col");
-      if (last) last.classList.add("is-last-compare-col");
+      var visible = [];
+      row.querySelectorAll(".col-hk, .col-us, .col-gb, .col-sg").forEach(function (cell) {
+        if (window.getComputedStyle(cell).display !== "none") visible.push(cell);
+      });
+      if (visible[0]) visible[0].classList.add("is-first-compare-col");
+      if (visible.length) visible[visible.length - 1].classList.add("is-last-compare-col");
     });
   }
 
@@ -139,18 +142,37 @@
     document.querySelectorAll(".compare-picker__slot").forEach(function (el, index) {
       var select = el.querySelector("select");
       var label = el.querySelector("label");
-      if (!select) return;
+      if (!select || index >= slots.length) return;
       select.innerHTML = optionHtml(slots[index]);
       if (label) {
         label.setAttribute("for", select.id);
         label.textContent = SLOT_LABELS[index];
       }
     });
-    document.querySelectorAll("#capabilities .cmp thead").forEach(function (thead) {
+    document.querySelectorAll(".cmp thead").forEach(function (thead) {
       ALL_CODES.forEach(function (code) {
         var th = thead.querySelector(".col-" + code);
         if (th) th.textContent = countryName(code);
       });
+    });
+  }
+
+  function syncCards() {
+    var wrap = document.querySelector(".country-cards");
+    if (!wrap) return;
+    var cards = {};
+    ALL_CODES.forEach(function (code) {
+      cards[code] = wrap.querySelector('.country-card[data-country="' + code + '"]');
+    });
+    slots.forEach(function (code) {
+      if (!cards[code]) return;
+      cards[code].hidden = false;
+      wrap.appendChild(cards[code]);
+    });
+    ALL_CODES.forEach(function (code) {
+      if (slots.indexOf(code) !== -1 || !cards[code]) return;
+      cards[code].hidden = true;
+      wrap.appendChild(cards[code]);
     });
   }
 
@@ -176,11 +198,13 @@
     });
     markEdgeColumns();
     renderSelects();
+    syncCards();
   }
+
+  applySlots();
 
   var capabilities = document.getElementById("capabilities");
   if (capabilities) {
-    applySlots();
     var searchInput = capabilities.querySelector("[data-capability-search]");
     var searchEmpty = capabilities.querySelector("[data-search-empty]");
     var searchStatus = capabilities.querySelector("[data-search-status]");
@@ -245,17 +269,63 @@
         }
       });
     }
-    capabilities.addEventListener("change", function (event) {
-      var select = event.target.closest("[data-compare-slot]");
-      if (!select) return;
-      var slot = parseInt(select.getAttribute("data-compare-slot"), 10);
-      var next = select.value;
-      if (slots.indexOf(next) !== -1) {
-        select.value = slots[slot];
-        return;
-      }
-      slots[slot] = next;
-      applySlots();
+
+    capabilities.querySelectorAll(".table-shell__scroller").forEach(function (scroller) {
+      if (scroller.querySelector(".table-edge-shadow")) return;
+      var edge = document.createElement("div");
+      edge.className = "table-edge-shadow";
+      edge.setAttribute("aria-hidden", "true");
+      scroller.insertBefore(edge, scroller.firstChild);
+    });
+
+    function layoutCapabilityShadows() {
+      capabilities.querySelectorAll(".table-shell__scroller").forEach(function (scroller) {
+        var edge = scroller.querySelector(".table-edge-shadow");
+        if (!edge) return;
+        var height = scroller.scrollHeight;
+        edge.style.height = height + "px";
+        edge.style.marginBottom = -height + "px";
+      });
+    }
+
+    function syncCapabilityFades() {
+      capabilities.querySelectorAll(".table-shell").forEach(function (shell) {
+        var scroller = shell.querySelector(".table-shell__scroller");
+        if (!scroller) return;
+        var maxScroll = scroller.scrollWidth - scroller.clientWidth;
+        shell.classList.toggle(
+          "is-at-end",
+          maxScroll <= 1 || scroller.scrollLeft >= maxScroll - 1
+        );
+      });
+    }
+
+    capabilities.querySelectorAll(".table-shell__scroller").forEach(function (scroller) {
+      scroller.addEventListener("scroll", syncCapabilityFades, { passive: true });
+    });
+    window.addEventListener("resize", function () {
+      layoutCapabilityShadows();
+      syncCapabilityFades();
+    });
+    layoutCapabilityShadows();
+    syncCapabilityFades();
+    window.requestAnimationFrame(function () {
+      layoutCapabilityShadows();
+      syncCapabilityFades();
     });
   }
+
+  document.addEventListener("change", function (event) {
+    var select = event.target.closest("[data-compare-slot]");
+    if (!select) return;
+    var slot = parseInt(select.getAttribute("data-compare-slot"), 10);
+    if (slot >= slots.length) return;
+    var next = select.value;
+    if (slots.indexOf(next) !== -1) {
+      select.value = slots[slot];
+      return;
+    }
+    slots[slot] = next;
+    applySlots();
+  });
 })();

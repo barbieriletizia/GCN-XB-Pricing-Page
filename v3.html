@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
-    <title>Compare pricing by country · Stripe</title>
-    <link rel="stylesheet" href="styles.css?v=no-playground" />
+    <title>Compare pricing by country · Stripe · v3</title>
+    <link rel="stylesheet" href="styles-v3.css?v=v3-seam-shadow" />
     <link rel="stylesheet" href="version-switch.css?v=left-pad-16" />
   </head>
-  <body class="cols-hk cols-us">
+  <body class="cols-hk cols-us cols-gb">
     <header class="home-header site-header">
       <div class="home-header-container">
         <div class="header-inner">
@@ -125,207 +125,11 @@
         </div>
       </section>
 
-      <section class="comparison" id="compare" aria-label="Payments, expansion, and payouts">
+      <section class="comparison" id="compare" aria-label="Payments and money management">
         <div class="wrap">
-          <div class="section-head">
-            <div class="currency-switcher">
-              <label class="currency-switcher__label" for="currency-select">Show prices in</label>
-              <div class="currency-switcher__control">
-                <select id="currency-select" data-currency-select>
-                  <option value="local" selected>Local currency</option>
-                  <option value="USD">USD · US dollar</option>
-                  <option value="HKD">HKD · Hong Kong dollar</option>
-                  <option value="GBP">GBP · British pound</option>
-                  <option value="SGD">SGD · Singapore dollar</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div class="country-cards" id="payments">
-            <article class="country-card" data-country="hk">
-              <header class="country-card__head">
-                <h3 class="country-card__title">Hong Kong</h3>
-              </header>
-              <div class="country-card__block">
-                <h4 class="country-card__label">Payments</h4>
-                <p class="price">3.4% + <span class="money" data-amount="2.35" data-ccy="HKD">HK$2.35</span></p>
-                <p class="price-note">per successful transaction for domestic cards</p>
-              </div>
-              <div class="country-card__block">
-                <h4 class="country-card__label">Managed Payments</h4>
-                <p class="price">+ 3.5%</p>
-                <p class="price-note">per successful Managed Payments transaction</p>
-              </div>
-              <div class="country-card__block">
-                <h4 class="country-card__label">Global Payouts</h4>
-                <p class="price">Starting at <span class="money" data-amount="1.50" data-ccy="USD">$1.50</span></p>
-                <p class="price-note">per payout</p>
-              </div>
-              <div class="country-card__cta">
-                <a class="btn btn--primary btn--lg" href="https://dashboard.stripe.com/register?country=HK" target="_blank" rel="noopener noreferrer">
-                  <span class="btn__inner">
-                    Start now
-                    <span class="btn__chev-wrap" aria-hidden="true">
-                      <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
-                        <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
-                      </svg>
-                      <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
-                        <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
-                      </svg>
-                    </span>
-                  </span>
-                </a>
-              </div>
-            </article>
-
-            <article class="country-card" data-country="us">
-              <header class="country-card__head">
-                <h3 class="country-card__title">United States</h3>
-              </header>
-              <div class="country-card__block">
-                <h4 class="country-card__label">Payments</h4>
-                <p class="price">2.9% + <span class="money" data-amount="0.30" data-ccy="USD">30¢</span></p>
-                <p class="price-note">per successful transaction for domestic cards</p>
-              </div>
-              <div class="country-card__block">
-                <h4 class="country-card__label">Managed Payments</h4>
-                <p class="price">+ 3.5%</p>
-                <p class="price-note">per successful Managed Payments transaction</p>
-              </div>
-              <div class="country-card__block">
-                <h4 class="country-card__label">Global Payouts</h4>
-                <p class="price">Starting at <span class="money" data-amount="1.50" data-ccy="USD">$1.50</span></p>
-                <p class="price-note">per payout</p>
-              </div>
-              <div class="country-card__cta">
-                <a class="btn btn--primary btn--lg" href="https://dashboard.stripe.com/register?country=US" target="_blank" rel="noopener noreferrer">
-                  <span class="btn__inner">
-                    Start now
-                    <span class="btn__chev-wrap" aria-hidden="true">
-                      <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
-                        <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
-                      </svg>
-                      <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
-                        <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
-                      </svg>
-                    </span>
-                  </span>
-                </a>
-                <a class="btn btn--secondary btn--lg" href="https://stripe.com/contact/sales" target="_blank" rel="noopener noreferrer">
-                  <span class="btn__inner">Contact sales for custom pricing</span>
-                </a>
-              </div>
-            </article>
-
-            <article class="country-card" data-country="gb">
-              <header class="country-card__head">
-                <h3 class="country-card__title">United Kingdom</h3>
-              </header>
-              <div class="country-card__block">
-                <h4 class="country-card__label">Payments</h4>
-                <p class="price">1.5% + <span class="money" data-amount="0.20" data-ccy="GBP">20p</span></p>
-                <p class="price-note">for standard UK cards</p>
-                <p class="price">2.5% + <span class="money" data-amount="0.20" data-ccy="GBP">20p</span></p>
-                <p class="price-note">for EU Cards</p>
-              </div>
-              <div class="country-card__block">
-                <h4 class="country-card__label">Managed Payments</h4>
-                <p class="price">+ 3.5%</p>
-                <p class="price-note">per successful Managed Payments transaction</p>
-              </div>
-              <div class="country-card__block">
-                <h4 class="country-card__label">Global Payouts</h4>
-                <p class="price">Starting at <span class="money" data-amount="1.50" data-ccy="USD">$1.50</span></p>
-                <p class="price-note">per payout</p>
-              </div>
-              <div class="country-card__cta">
-                <a class="btn btn--primary btn--lg" href="https://dashboard.stripe.com/register?country=GB" target="_blank" rel="noopener noreferrer">
-                  <span class="btn__inner">
-                    Start now
-                    <span class="btn__chev-wrap" aria-hidden="true">
-                      <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
-                        <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
-                      </svg>
-                      <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
-                        <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
-                      </svg>
-                    </span>
-                  </span>
-                </a>
-                <a class="btn btn--secondary btn--lg" href="https://stripe.com/en-gb/contact/sales" target="_blank" rel="noopener noreferrer">
-                  <span class="btn__inner">Contact sales for custom pricing</span>
-                </a>
-              </div>
-            </article>
-
-            <article class="country-card" data-country="sg">
-              <header class="country-card__head">
-                <h3 class="country-card__title">Singapore</h3>
-              </header>
-              <div class="country-card__block">
-                <h4 class="country-card__label">Payments</h4>
-                <p class="price">3.4% + <span class="money" data-amount="0.50" data-ccy="SGD">S$0.50</span></p>
-                <p class="price-note">per successful transaction for domestic cards</p>
-              </div>
-              <div class="country-card__block">
-                <h4 class="country-card__label">Managed Payments</h4>
-                <p class="price">+ 3.5%</p>
-                <p class="price-note">per successful Managed Payments transaction</p>
-              </div>
-              <div class="country-card__block">
-                <h4 class="country-card__label">Global Payouts</h4>
-                <p class="price">Starting at <span class="money" data-amount="1.50" data-ccy="USD">$1.50</span></p>
-                <p class="price-note">per payout</p>
-              </div>
-              <div class="country-card__cta">
-                <a class="btn btn--primary btn--lg" href="https://dashboard.stripe.com/register?country=SG" target="_blank" rel="noopener noreferrer">
-                  <span class="btn__inner">
-                    Start now
-                    <span class="btn__chev-wrap" aria-hidden="true">
-                      <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
-                        <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
-                      </svg>
-                      <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
-                        <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
-                      </svg>
-                    </span>
-                  </span>
-                </a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="comparison comparison--capabilities" id="capabilities" aria-labelledby="capabilities-heading">
-        <div class="wrap">
-          <div class="section-head">
-            <h2 class="section-title" id="capabilities-heading">Full capabilities</h2>
-          </div>
-
           <div class="compare-scroll">
           <div class="compare-picker" role="group" aria-label="Countries to compare">
-            <div class="compare-picker__spacer">
-              <div class="compare-search">
-                <label class="sr-only" for="capability-search">Search for a product</label>
-                <span class="compare-search__icon" aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <circle cx="7" cy="7" r="5.25" stroke="currentColor" stroke-width="1.5" />
-                    <path d="M11 11l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                  </svg>
-                </span>
-                <input
-                  id="capability-search"
-                  class="compare-search__input"
-                  type="search"
-                  placeholder="Search for a product"
-                  autocomplete="off"
-                  spellcheck="false"
-                  data-capability-search
-                />
-              </div>
-            </div>
+            <div class="compare-picker__spacer" aria-hidden="true"></div>
             <div class="compare-picker__slot">
               <label class="sr-only" for="compare-slot-0">First country to compare</label>
               <div class="compare-select-wrap">
@@ -348,7 +152,463 @@
                 </select>
               </div>
             </div>
+            <div class="compare-picker__slot">
+              <label class="sr-only" for="compare-slot-2">Third country to compare</label>
+              <div class="compare-select-wrap">
+                <select id="compare-slot-2" class="compare-select" data-compare-slot="2">
+                  <option value="hk" disabled>Hong Kong</option>
+                  <option value="us" disabled>United States</option>
+                  <option value="gb" selected>United Kingdom</option>
+                  <option value="sg">Singapore</option>
+                </select>
+              </div>
+            </div>
           </div>
+
+          <div class="table-shell" id="payments">
+            <table class="cmp">
+              <colgroup>
+                <col class="cmp__col-product" />
+                <col class="cmp__col-hk" />
+                <col class="cmp__col-us" />
+                <col class="cmp__col-gb" />
+                <col class="cmp__col-sg" />
+              </colgroup>
+              <caption class="sr-only">Cards and wallets and Money Management across Hong Kong, the United States, the United Kingdom, and Singapore</caption>
+              <thead>
+                <tr>
+                  <th class="col-product" scope="col">Product</th>
+                  <th class="col-hk" scope="col">Hong Kong</th>
+                  <th class="col-us" scope="col">United States</th>
+                  <th class="col-gb" scope="col">United Kingdom</th>
+                  <th class="col-sg" scope="col">Singapore</th>
+                </tr>
+              </thead>
+              <tbody>
+<tr class="cmp__row--links">
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Cards and wallets</span>
+                    <span class="product-desc">Accept online payments with a platform that boosts conversion, simplifies global expansion, and increases acceptance rates.</span>
+                    <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
+                      <span class="btn__inner">
+                        Start now
+                      <span class="btn__chev-wrap" aria-hidden="true">
+                        <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
+                          <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
+                        </svg>
+                        <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
+                          <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                      </span>
+                    </a></div></th>
+                  <td class="col-hk">
+                    <div class="cell-stack">
+                    <span class="price">3.4% + <span class="money" data-amount="2.35" data-ccy="HKD">HK$2.35</span></span>
+                    <span class="price-note">per successful transaction</span>
+                    <span class="price-note price-note--sm">for domestic cards</span>
+                    <span class="price">+ 0.5%</span>
+                    <span class="price-note">for cross-border payments</span>
+                    <a class="price-link" href="https://stripe.com/en-hk/pricing" target="_blank" rel="noopener noreferrer">
+                      Pricing details
+                      <span class="btn__chev-wrap" aria-hidden="true">
+                        <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
+                          <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
+                        </svg>
+                        <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
+                          <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                    </a>
+                    </div>
+                  </td>
+                  <td class="col-us">
+                    <div class="cell-stack">
+                    <span class="price">2.9% + <span class="money" data-amount="0.30" data-ccy="USD">30¢</span></span>
+                    <span class="price-note">per successful transaction</span>
+                    <span class="price-note price-note--sm">for domestic cards</span>
+                    <span class="price">+ 1.5%</span>
+                    <span class="price-note">for cross-border payments</span>
+                    <a class="price-link" href="https://stripe.com/pricing" target="_blank" rel="noopener noreferrer">
+                      Pricing details
+                      <span class="btn__chev-wrap" aria-hidden="true">
+                        <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
+                          <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
+                        </svg>
+                        <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
+                          <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                    </a>
+                    </div>
+                  </td>
+                  <td class="col-gb">
+                    <div class="cell-stack">
+                    <span class="price">1.5% + <span class="money" data-amount="0.20" data-ccy="GBP">20p</span></span>
+                    <span class="price-note">per successful transaction</span>
+                    <span class="price-note price-note--sm">for domestic cards</span>
+                    <span class="price">2.5% + <span class="money" data-amount="0.20" data-ccy="GBP">20p</span></span>
+                    <span class="price-note">for cross-border payments</span>
+                    <a class="price-link" href="https://stripe.com/en-gb/pricing" target="_blank" rel="noopener noreferrer">
+                      Pricing details
+                      <span class="btn__chev-wrap" aria-hidden="true">
+                        <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
+                          <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
+                        </svg>
+                        <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
+                          <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                    </a>
+                    </div>
+                  </td>
+                  <td class="col-sg">
+                    <div class="cell-stack">
+                    <span class="price">3.4% + <span class="money" data-amount="0.50" data-ccy="SGD">S$0.50</span></span>
+                    <span class="price-note">per successful transaction</span>
+                    <span class="price-note price-note--sm">for domestic cards</span>
+                    <span class="price">+ 0.5%</span>
+                    <span class="price-note">for cross-border payments</span>
+                    <a class="price-link" href="https://stripe.com/en-sg/pricing" target="_blank" rel="noopener noreferrer">
+                      Pricing details
+                      <span class="btn__chev-wrap" aria-hidden="true">
+                        <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
+                          <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
+                        </svg>
+                        <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
+                          <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                    </a>
+                    </div>
+                  </td>
+                </tr>
+<tr class="cmp__row--links">
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Treasury</span>
+                    <span class="product-desc">Store, earn, spend, and send money from a global, multicurrency business account.</span>
+                    <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
+                      <span class="btn__inner">
+                        Start now
+                      <span class="btn__chev-wrap" aria-hidden="true">
+                        <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
+                          <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
+                        </svg>
+                        <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
+                          <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                      </span>
+                    </a></div></th>
+                  <td class="col-hk">
+                    <div class="cell-stack">
+                    <span class="price">No monthly fee</span>
+                    <span class="price-note">with zero minimum balance required</span>
+                    <a class="price-link" href="https://stripe.com/en-hk/treasury" target="_blank" rel="noopener noreferrer">
+                      Pricing details
+                      <span class="btn__chev-wrap" aria-hidden="true">
+                        <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
+                          <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
+                        </svg>
+                        <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
+                          <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                    </a>
+                    </div>
+                  </td>
+                  <td class="col-us">
+                    <div class="cell-stack">
+                    <span class="price">No monthly fee</span>
+                    <span class="price-note">with zero minimum balance required</span>
+                    <a class="price-link" href="https://stripe.com/treasury" target="_blank" rel="noopener noreferrer">
+                      Pricing details
+                      <span class="btn__chev-wrap" aria-hidden="true">
+                        <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
+                          <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
+                        </svg>
+                        <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
+                          <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                    </a>
+                    </div>
+                  </td>
+                  <td class="col-gb">
+                    <div class="cell-stack">
+                    <span class="price">Available</span>
+                    <a class="price-link" href="https://stripe.com/en-gb/treasury" target="_blank" rel="noopener noreferrer">
+                      Pricing details
+                      <span class="btn__chev-wrap" aria-hidden="true">
+                        <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
+                          <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
+                        </svg>
+                        <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
+                          <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                    </a>
+                    </div>
+                  </td>
+                  <td class="col-sg">
+                    <div class="cell-stack">
+                    <span class="price">Limited</span>
+                    <span class="price-note">Multi-currency conversion</span>
+                    <a class="price-link" href="https://stripe.com/en-sg/treasury" target="_blank" rel="noopener noreferrer">
+                      Pricing details
+                      <span class="btn__chev-wrap" aria-hidden="true">
+                        <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
+                          <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
+                        </svg>
+                        <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
+                          <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                    </a>
+                    </div>
+                  </td>
+                </tr>
+<tr class="cmp__row--links">
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Instant currency conversion</span>
+                    <span class="product-desc">Convert balances instantly at published rates, without waiting for a payout cycle.</span>
+                    <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
+                      <span class="btn__inner">
+                        Start now
+                      <span class="btn__chev-wrap" aria-hidden="true">
+                        <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
+                          <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
+                        </svg>
+                        <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
+                          <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                      </span>
+                    </a></div></th>
+                  <td class="col-hk">
+                    <div class="cell-stack">
+                    <span class="price">Starting at 0.5%</span>
+                    <span class="price-note">of the converted amount</span>
+                    </div>
+                  </td>
+                  <td class="col-us">
+                    <div class="cell-stack">
+                    <span class="price">Starting at 0.5%</span>
+                    <span class="price-note">of the converted amount</span>
+                    </div>
+                  </td>
+                  <td class="col-gb">
+                    <div class="cell-stack">
+                    <span class="price">Starting at 0.5%</span>
+                    <span class="price-note">of the converted amount</span>
+                    </div>
+                  </td>
+                  <td class="col-sg">
+                    <div class="cell-stack">
+                    <span class="price">Starting at 0.35%</span>
+                    <span class="price-note">of the converted amount</span>
+                    </div>
+                  </td>
+                </tr>
+<tr class="cmp__row--links">
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Global Payouts</span>
+                    <span class="product-desc">Send money to recipients in 160 countries. Quickly go live through no code, hosted, or API options.</span>
+                    <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
+                      <span class="btn__inner">
+                        Start now
+                      <span class="btn__chev-wrap" aria-hidden="true">
+                        <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
+                          <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
+                        </svg>
+                        <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
+                          <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                      </span>
+                    </a></div></th>
+                  <td class="col-hk">
+                    <div class="cell-stack">
+                    <span class="price">Starting at <span class="money" data-amount="1.50" data-ccy="HKD">HK$1.50</span></span>
+                    <span class="price-note">per payout</span>
+                    <a class="price-link" href="https://stripe.com/en-hk/payouts" target="_blank" rel="noopener noreferrer">
+                      Pricing details
+                      <span class="btn__chev-wrap" aria-hidden="true">
+                        <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
+                          <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
+                        </svg>
+                        <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
+                          <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                    </a>
+                    </div>
+                  </td>
+                  <td class="col-us">
+                    <div class="cell-stack">
+                    <span class="price">Starting at <span class="money" data-amount="1.50" data-ccy="USD">$1.50</span></span>
+                    <span class="price-note">per payout</span>
+                    <a class="price-link" href="https://stripe.com/payouts" target="_blank" rel="noopener noreferrer">
+                      Pricing details
+                      <span class="btn__chev-wrap" aria-hidden="true">
+                        <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
+                          <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
+                        </svg>
+                        <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
+                          <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                    </a>
+                    </div>
+                  </td>
+                  <td class="col-gb">
+                    <div class="cell-stack">
+                    <span class="price"><span class="money" data-amount="0.50" data-ccy="GBP">£0.50</span></span>
+                    <span class="price-note">per payout</span>
+                    <a class="price-link" href="https://stripe.com/en-gb/payouts" target="_blank" rel="noopener noreferrer">
+                      Pricing details
+                      <span class="btn__chev-wrap" aria-hidden="true">
+                        <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
+                          <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
+                        </svg>
+                        <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
+                          <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                    </a>
+                    </div>
+                  </td>
+                  <td class="col-sg">
+                    <div class="cell-stack">
+                    <span class="price">Starting at <span class="money" data-amount="1.50" data-ccy="SGD">S$1.50</span></span>
+                    <span class="price-note">per payout</span>
+                    <a class="price-link" href="https://stripe.com/en-sg/payouts" target="_blank" rel="noopener noreferrer">
+                      Pricing details
+                      <span class="btn__chev-wrap" aria-hidden="true">
+                        <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
+                          <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
+                        </svg>
+                        <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
+                          <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                    </a>
+                    </div>
+                  </td>
+                </tr>
+<tr class="cmp__row--links">
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Issuing</span>
+                    <span class="product-desc">Launch your own card program for businesses, consumers, or agents with support across 75+ markets.</span>
+                    <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
+                      <span class="btn__inner">
+                        Start now
+                      <span class="btn__chev-wrap" aria-hidden="true">
+                        <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
+                          <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
+                        </svg>
+                        <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
+                          <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                      </span>
+                    </a></div></th>
+                  <td class="col-hk">
+                    <div class="cell-stack">
+                    <span class="price">Starting from <span class="money" data-amount="0.10" data-ccy="USD">$0.10</span></span>
+                    <span class="price-note">per virtual card</span>
+                    <a class="price-link" href="https://stripe.com/en-hk/issuing" target="_blank" rel="noopener noreferrer">
+                      Pricing details
+                      <span class="btn__chev-wrap" aria-hidden="true">
+                        <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
+                          <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
+                        </svg>
+                        <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
+                          <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                    </a>
+                    </div>
+                  </td>
+                  <td class="col-us">
+                    <div class="cell-stack">
+                    <span class="price">Starting from <span class="money" data-amount="0.10" data-ccy="USD">$0.10</span></span>
+                    <span class="price-note">per virtual card</span>
+                    <a class="price-link" href="https://stripe.com/issuing" target="_blank" rel="noopener noreferrer">
+                      Pricing details
+                      <span class="btn__chev-wrap" aria-hidden="true">
+                        <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
+                          <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
+                        </svg>
+                        <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
+                          <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                    </a>
+                    </div>
+                  </td>
+                  <td class="col-gb">
+                    <div class="cell-stack">
+                    <span class="price"><span class="money" data-amount="3.50" data-ccy="GBP">£3.50</span> physical card</span>
+                    <span class="price-note">0.2% + <span class="money" data-amount="0.15" data-ccy="GBP">15p</span> after first <span class="money" data-amount="500000" data-ccy="GBP">£500,000</span></span>
+                    <a class="price-link" href="https://stripe.com/en-gb/issuing" target="_blank" rel="noopener noreferrer">
+                      Pricing details
+                      <span class="btn__chev-wrap" aria-hidden="true">
+                        <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
+                          <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
+                        </svg>
+                        <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
+                          <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                    </a>
+                    </div>
+                  </td>
+                  <td class="col-sg">
+                    <div class="cell-stack">
+                    <span class="price">Starting from <span class="money" data-amount="0.10" data-ccy="USD">$0.10</span></span>
+                    <span class="price-note">per virtual card</span>
+                    <a class="price-link" href="https://stripe.com/en-sg/issuing" target="_blank" rel="noopener noreferrer">
+                      Pricing details
+                      <span class="btn__chev-wrap" aria-hidden="true">
+                        <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
+                          <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
+                        </svg>
+                        <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
+                          <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                    </a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="comparison comparison--capabilities" id="capabilities" aria-labelledby="capabilities-heading">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 class="section-title" id="capabilities-heading">Full capabilities</h2>
+            <div class="compare-search">
+                <label class="sr-only" for="capability-search">Search for a product</label>
+                <span class="compare-search__icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <circle cx="7" cy="7" r="5.25" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M11 11l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                  </svg>
+                </span>
+                <input
+                  id="capability-search"
+                  class="compare-search__input"
+                  type="search"
+                  placeholder="Search for a product"
+                  autocomplete="off"
+                  spellcheck="false"
+                  data-capability-search
+                />
+            </div>
+          </div>
+
+          <div class="compare-scroll">
 
           <p class="compare-search__empty" hidden data-search-empty>No products match your search.</p>
           <p class="sr-only" aria-live="polite" data-search-status></p>
@@ -360,6 +620,7 @@
                 <p class="capability-block__copy">Take payments anywhere—online, in person, and through agents. One integration unlocks 125+ payment methods and 135+ currencies.</p>
               </div>
               <div class="table-shell" id="products">
+            <div class="table-shell__scroller">
             <table class="cmp">
               <colgroup>
                 <col class="cmp__col-product" />
@@ -380,7 +641,7 @@
               </thead>
               <tbody>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Payments</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Payments</span>
                     <span class="product-desc">Accept online payments with a platform that boosts conversion, simplifies global expansion, and increases acceptance rates.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -394,7 +655,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk">
                     <div class="cell-stack">
                     <span class="price">3.4% + <span class="money" data-amount="2.35" data-ccy="HKD">HK$2.35</span></span>
@@ -468,7 +729,7 @@
                   </td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Checkout</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Checkout</span>
                     <span class="product-desc">Launch a secure, customizable, conversion-optimized checkout. Businesses see 2x growth in payment volume on average.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -482,7 +743,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk">
                     <div class="cell-stack">
                     <span class="price">Included with online payments</span>
@@ -549,7 +810,7 @@
                   </td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Managed Payments</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Managed Payments</span>
                     <span class="product-desc">Focus on growth while Stripe's merchant of record solution handles indirect tax compliance, fraud, disputes, and transaction-level support.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -563,7 +824,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk">
                     <div class="cell-stack">
 <span class="price">+ 3.5%</span><span class="price-note">per successful Managed Payments transaction</span>
@@ -631,7 +892,7 @@
                   </td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Terminal</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Terminal</span>
                     <span class="product-desc">Accept in-person payments with pre-certified readers, and unified reporting across online and in-person sales.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -645,7 +906,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk" data-value="no"><span class="avail avail--no"><span aria-hidden="true">—</span><span class="sr-only">Not available</span></span></td>
                   <td class="col-us">
                     <div class="cell-stack">
@@ -671,7 +932,7 @@
                   </td>
                   <td class="col-gb">
                     <div class="cell-stack">
-                    <span class="avail avail--yes"><img class="avail__icon" src="assets/icons/check-included.svg" width="16" height="16" alt="" /> Available</span>
+                    <span class="price">Included with Payments</span>
                     <span class="price-note">Cards pricing</span>
                     <a class="price-link" href="https://stripe.com/en-gb/terminal" target="_blank" rel="noopener noreferrer">
                       Pricing details
@@ -705,7 +966,7 @@
                   </td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Link</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Link</span>
                     <span class="product-desc">Autofill customer details for faster human and agentic checkouts, with higher conversion and lower costs.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -719,7 +980,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk">
                     <div class="cell-stack">
                     <span class="price">Included with Payments</span>
@@ -791,7 +1052,7 @@
                   </td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Payment methods</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Payment methods</span>
                     <span class="product-desc">Convert more customers and expand into new markets with access to 125+ payment methods from around the world.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -805,7 +1066,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk">
                     <div class="cell-stack">
                     <span class="price">Alipay, WeChat Pay 2.2% + <span class="money" data-amount="2.00" data-ccy="HKD">HK$2.00</span></span>
@@ -881,7 +1142,7 @@
                   </td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Authorization Boost</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Authorization Boost</span>
                     <span class="product-desc">Increase revenue by 3.8% on average and reduce costs by up to 3.3% with AI-powered optimizations trained on billions of transactions.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -895,7 +1156,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk">
                     <div class="cell-stack">
                     <span class="price">Included with Payments</span>
@@ -963,7 +1224,7 @@
                   </td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Financial Connections</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Financial Connections</span>
                     <span class="product-desc">Instantly verify bank accounts and get real-time financial data to power faster payments, reduce fraud, and enable new product experiences.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -977,7 +1238,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk" data-value="no"><span class="avail avail--no"><span aria-hidden="true">—</span><span class="sr-only">Not available</span></span></td>
                   <td class="col-us">
                     <div class="cell-stack">
@@ -1017,6 +1278,7 @@
                 </tr>
               </tbody>
             </table>
+            </div>
           </div>
             </div>
 
@@ -1026,6 +1288,7 @@
                 <p class="capability-block__copy">Minimize fraud and risk across transactions, accounts, and customers—powered by AI trained on hundreds of billions of data points across the Stripe network.</p>
               </div>
               <div class="table-shell">
+            <div class="table-shell__scroller">
             <table class="cmp">
               <colgroup>
                 <col class="cmp__col-product" />
@@ -1046,7 +1309,7 @@
               </thead>
               <tbody>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Radar</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Radar</span>
                     <span class="product-desc">Block transaction fraud, account fraud, and customer abuse with AI, powered by hundreds of billions of data points across the Stripe network.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -1060,10 +1323,10 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk">
                     <div class="cell-stack">
-                    <span class="avail avail--yes"><img class="avail__icon" src="assets/icons/check-included.svg" width="16" height="16" alt="" /> Included</span>
+                    <span class="price">Included</span>
                     <span class="price-note">From <span class="money" data-amount="0.40" data-ccy="HKD">HK$0.40</span> screened</span>
                     <a class="price-link" href="https://stripe.com/en-hk/radar/pricing" target="_blank" rel="noopener noreferrer">
                       Pricing details
@@ -1134,7 +1397,7 @@
                   </td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Identity</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Identity</span>
                     <span class="product-desc">Verify IDs and selfies in seconds—with programmatic checks for age and document validity—to reduce fraud and stay compliant.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -1148,7 +1411,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk" data-value="no"><span class="avail avail--no"><span aria-hidden="true">—</span><span class="sr-only">Not available</span></span></td>
                   <td class="col-us">
                     <div class="cell-stack">
@@ -1189,7 +1452,7 @@
                   <td class="col-sg" data-value="no"><span class="avail avail--no"><span aria-hidden="true">—</span><span class="sr-only">Not available</span></span></td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Managed Risk</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Managed Risk</span>
                     <span class="product-desc">Protect your platform against financial risk from fraudulent merchants and reduce overhead with end-to-end risk management.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -1203,7 +1466,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk" data-value="no"><span class="avail avail--no"><span aria-hidden="true">—</span><span class="sr-only">Not available</span></span></td>
                   <td class="col-us">
                     <div class="cell-stack">
@@ -1242,6 +1505,7 @@
                 </tr>
               </tbody>
             </table>
+            </div>
           </div>
             </div>
 
@@ -1251,6 +1515,7 @@
                 <p class="capability-block__copy">Move fast and free up resources with flexible billing models, including subscription management and one-time invoicing, tax, and automated reconciliation.</p>
               </div>
               <div class="table-shell">
+            <div class="table-shell__scroller">
             <table class="cmp">
               <colgroup>
                 <col class="cmp__col-product" />
@@ -1271,7 +1536,7 @@
               </thead>
               <tbody>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Subscriptions</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Subscriptions</span>
                     <span class="product-desc">Grow subscription revenue with 15+ pricing models, 100+ payment methods, and tools that recover 55% of failed payments.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -1285,7 +1550,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk">
                     <div class="cell-stack">
                     <span class="price">0.7% of volume</span>
@@ -1359,7 +1624,7 @@
                   </td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Metronome</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Metronome</span>
                     <span class="product-desc">Meter, bill, and track usage-based revenue in one place—with flexible infrastructure for iterations, real-time data, and billing transparency.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -1373,7 +1638,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk">
                     <div class="cell-stack">
                     <span class="price"><span class="money" data-amount="0.04" data-ccy="USD">US$0.04</span> / 1K events</span>
@@ -1447,7 +1712,7 @@
                   </td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Invoicing</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Invoicing</span>
                     <span class="product-desc">Automate invoice creation, collections, and reconciliation to get paid faster—supports 100+ payment methods and 135+ currencies.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -1461,7 +1726,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk">
                     <div class="cell-stack">
 <span class="price">0.4% per paid invoice</span>
@@ -1529,7 +1794,7 @@
                   </td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Tax</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Tax</span>
                     <span class="product-desc">Automate sales tax, VAT, and GST compliance in 100+ countries, from calculations to registrations and filing.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -1543,7 +1808,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk">
                     <div class="cell-stack">
                     <span class="price">0.5% no-code</span>
@@ -1615,7 +1880,7 @@
                   </td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Revenue Recognition</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Revenue Recognition</span>
                     <span class="product-desc">Automate GAAP-compliant revenue recognition—including upgrades, downgrades, refunds, and prorations—with no manual work required.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -1629,7 +1894,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk">
                     <div class="cell-stack">
                     <span class="price">Starting at <span class="money" data-amount="195" data-ccy="HKD">HK$195</span></span>
@@ -1666,7 +1931,7 @@
                   </td>
                   <td class="col-gb">
                     <div class="cell-stack">
-                    <span class="avail avail--yes"><img class="avail__icon" src="assets/icons/check-included.svg" width="16" height="16" alt="" /> Available</span>
+                    <span class="price">Included</span>
                     <a class="price-link" href="https://stripe.com/en-gb/revenue-recognition" target="_blank" rel="noopener noreferrer">
                       Pricing details
                       <span class="btn__chev-wrap" aria-hidden="true">
@@ -1698,7 +1963,7 @@
                   </td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Data Pipeline</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Data Pipeline</span>
                     <span class="product-desc">Sync your complete Stripe dataset to Snowflake, Databricks, Redshift, and more—no code required.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -1712,7 +1977,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk">
                     <div class="cell-stack">
                     <span class="price">Starting at <span class="money" data-amount="508" data-ccy="HKD">HK$508</span></span>
@@ -1750,7 +2015,7 @@
                   </td>
                   <td class="col-gb">
                     <div class="cell-stack">
-                    <span class="avail avail--yes"><img class="avail__icon" src="assets/icons/check-included.svg" width="16" height="16" alt="" /> Available</span>
+                    <span class="price">Included</span>
                     <span class="price-note">Includes Stripe Sigma</span>
                     <a class="price-link" href="https://stripe.com/en-gb/data-pipeline" target="_blank" rel="noopener noreferrer">
                       Pricing details
@@ -1783,7 +2048,7 @@
                   </td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Stripe Sigma</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Stripe Sigma</span>
                     <span class="product-desc">Create custom reports on your Stripe data in the Dashboard with SQL or AI-powered natural language prompts—analyze revenue, churn, and more.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -1797,7 +2062,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk">
                     <div class="cell-stack">
                     <span class="price">Starting at <span class="money" data-amount="78" data-ccy="HKD">HK$78</span></span>
@@ -1834,7 +2099,7 @@
                   </td>
                   <td class="col-gb">
                     <div class="cell-stack">
-                    <span class="avail avail--yes"><img class="avail__icon" src="assets/icons/check-included.svg" width="16" height="16" alt="" /> Available</span>
+                    <span class="price">Included</span>
                     <a class="price-link" href="https://stripe.com/en-gb/sigma" target="_blank" rel="noopener noreferrer">
                       Pricing details
                       <span class="btn__chev-wrap" aria-hidden="true">
@@ -1869,6 +2134,7 @@
                 </tr>
               </tbody>
             </table>
+            </div>
           </div>
             </div>
 
@@ -1878,6 +2144,7 @@
                 <p class="capability-block__copy">Onboard users and offer them payments, financing, card issuing, financial accounts, and more.</p>
               </div>
               <div class="table-shell">
+            <div class="table-shell__scroller">
             <table class="cmp">
               <colgroup>
                 <col class="cmp__col-product" />
@@ -1898,7 +2165,7 @@
               </thead>
               <tbody>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Connect</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Connect</span>
                     <span class="product-desc">Embed payments and financial services directly into your platform or marketplace. Save time on onboarding, streamline compliance, and monetize payments.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -1912,10 +2179,10 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk">
                     <div class="cell-stack">
-                    <span class="avail avail--yes"><img class="avail__icon" src="assets/icons/check-included.svg" width="16" height="16" alt="" /> Included</span>
+                    <span class="price">Included</span>
                     <span class="price-note">From 0.25% when you set pricing</span>
                     <a class="price-link" href="https://stripe.com/en-hk/connect" target="_blank" rel="noopener noreferrer">
                       Pricing details
@@ -1949,7 +2216,7 @@
                   </td>
                   <td class="col-gb">
                     <div class="cell-stack">
-                    <span class="avail avail--yes"><img class="avail__icon" src="assets/icons/check-included.svg" width="16" height="16" alt="" /> Included</span>
+                    <span class="price">Included</span>
                     <span class="price-note">From 0.25% when you set pricing</span>
                     <a class="price-link" href="https://stripe.com/en-gb/connect" target="_blank" rel="noopener noreferrer">
                       Pricing details
@@ -1966,7 +2233,7 @@
                   </td>
                   <td class="col-sg">
                     <div class="cell-stack">
-                    <span class="avail avail--yes"><img class="avail__icon" src="assets/icons/check-included.svg" width="16" height="16" alt="" /> Included</span>
+                    <span class="price">Included</span>
                     <span class="price-note">From 0.25% when you set pricing</span>
                     <a class="price-link" href="https://stripe.com/en-sg/connect" target="_blank" rel="noopener noreferrer">
                       Pricing details
@@ -1983,7 +2250,7 @@
                   </td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Treasury for platforms</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Treasury for platforms</span>
                     <span class="product-desc">Embed financial accounts into your product. Users get FDIC-eligible balances, spend cards, cash back, and bill pay.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -1997,7 +2264,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk" data-value="no"><span class="avail avail--no"><span aria-hidden="true">—</span><span class="sr-only">Not available</span></span></td>
                   <td class="col-us">
                     <div class="cell-stack">
@@ -2018,7 +2285,7 @@
                   </td>
                   <td class="col-gb">
                     <div class="cell-stack">
-                    <span class="avail avail--yes"><img class="avail__icon" src="assets/icons/check-included.svg" width="16" height="16" alt="" /> Available</span>
+                    <span class="price">Included</span>
                     <a class="price-link" href="https://stripe.com/en-gb/connect/treasury" target="_blank" rel="noopener noreferrer">
                       Pricing details
                       <span class="btn__chev-wrap" aria-hidden="true">
@@ -2051,7 +2318,7 @@
                   </td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Issuing</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Issuing</span>
                     <span class="product-desc">Launch your own card program for businesses, consumers, or agents with support across 75+ markets.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -2065,8 +2332,24 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
-                  <td class="col-hk" data-value="no"><span class="avail avail--no"><span aria-hidden="true">—</span><span class="sr-only">Not available</span></span></td>
+                    </a></div></th>
+                  <td class="col-hk">
+                    <div class="cell-stack">
+                    <span class="price">Starting from <span class="money" data-amount="0.10" data-ccy="USD">$0.10</span></span>
+                    <span class="price-note">per virtual card</span>
+                    <a class="price-link" href="https://stripe.com/en-hk/issuing" target="_blank" rel="noopener noreferrer">
+                      Pricing details
+                      <span class="btn__chev-wrap" aria-hidden="true">
+                        <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
+                          <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
+                        </svg>
+                        <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
+                          <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                    </a>
+                    </div>
+                  </td>
                   <td class="col-us">
                     <div class="cell-stack">
                     <span class="price">Starting from <span class="money" data-amount="0.10" data-ccy="USD">$0.10</span></span>
@@ -2101,10 +2384,26 @@
                     </a>
                     </div>
                   </td>
-                  <td class="col-sg" data-value="no"><span class="avail avail--no"><span aria-hidden="true">—</span><span class="sr-only">Not available</span></span></td>
+                  <td class="col-sg">
+                    <div class="cell-stack">
+                    <span class="price">Starting from <span class="money" data-amount="0.10" data-ccy="USD">$0.10</span></span>
+                    <span class="price-note">per virtual card</span>
+                    <a class="price-link" href="https://stripe.com/en-sg/issuing" target="_blank" rel="noopener noreferrer">
+                      Pricing details
+                      <span class="btn__chev-wrap" aria-hidden="true">
+                        <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
+                          <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
+                        </svg>
+                        <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
+                          <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                    </a>
+                    </div>
+                  </td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Capital for platforms</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Capital for platforms</span>
                     <span class="product-desc">Offer financing to businesses on your platform—Stripe handles the rest.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -2118,7 +2417,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk" data-value="no"><span class="avail avail--no"><span aria-hidden="true">—</span><span class="sr-only">Not available</span></span></td>
                   <td class="col-us">
                     <div class="cell-stack">
@@ -2140,7 +2439,7 @@
                   <td class="col-sg" data-value="no"><span class="avail avail--no"><span aria-hidden="true">—</span><span class="sr-only">Not available</span></span></td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Instant Payouts for platforms</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Instant Payouts for platforms</span>
                     <span class="product-desc">Give your merchants access to their earnings in minutes, anytime.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -2154,7 +2453,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk">
                     <div class="cell-stack">
                     <span class="price">1%</span>
@@ -2226,6 +2525,7 @@
                 </tr>
               </tbody>
             </table>
+            </div>
           </div>
             </div>
 
@@ -2235,6 +2535,7 @@
                 <p class="capability-block__copy">Process payments, store multiple currencies and stablecoins, and send and spend money globally.</p>
               </div>
               <div class="table-shell">
+            <div class="table-shell__scroller">
             <table class="cmp">
               <colgroup>
                 <col class="cmp__col-product" />
@@ -2255,7 +2556,7 @@
               </thead>
               <tbody>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Treasury</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Treasury</span>
                     <span class="product-desc">Store, earn, spend, and send money from a global, multicurrency business account.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -2269,8 +2570,24 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
-                  <td class="col-hk" data-value="no"><span class="avail avail--no"><span aria-hidden="true">—</span><span class="sr-only">Not available</span></span></td>
+                    </a></div></th>
+                  <td class="col-hk">
+                    <div class="cell-stack">
+                    <span class="price">No monthly fee</span>
+                    <span class="price-note">with zero minimum balance required</span>
+                    <a class="price-link" href="https://stripe.com/en-hk/treasury" target="_blank" rel="noopener noreferrer">
+                      Pricing details
+                      <span class="btn__chev-wrap" aria-hidden="true">
+                        <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
+                          <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
+                        </svg>
+                        <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
+                          <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                    </a>
+                    </div>
+                  </td>
                   <td class="col-us">
                     <div class="cell-stack">
                     <span class="price">No monthly fee</span>
@@ -2290,7 +2607,7 @@
                   </td>
                   <td class="col-gb">
                     <div class="cell-stack">
-                    <span class="avail avail--yes"><img class="avail__icon" src="assets/icons/check-included.svg" width="16" height="16" alt="" /> Available</span>
+                    <span class="price">Included</span>
                     <a class="price-link" href="https://stripe.com/en-gb/treasury" target="_blank" rel="noopener noreferrer">
                       Pricing details
                       <span class="btn__chev-wrap" aria-hidden="true">
@@ -2323,7 +2640,7 @@
                   </td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Global Payouts</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Global Payouts</span>
                     <span class="product-desc">Send money to recipients in 160 countries. Quickly go live through no code, hosted, or API options.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -2337,8 +2654,24 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
-                  <td class="col-hk" data-value="no"><span class="avail avail--no"><span aria-hidden="true">—</span><span class="sr-only">Not available</span></span></td>
+                    </a></div></th>
+                  <td class="col-hk">
+                    <div class="cell-stack">
+                    <span class="price">Starting at <span class="money" data-amount="1.50" data-ccy="HKD">HK$1.50</span></span>
+                    <span class="price-note">per payout</span>
+                    <a class="price-link" href="https://stripe.com/en-hk/payouts" target="_blank" rel="noopener noreferrer">
+                      Pricing details
+                      <span class="btn__chev-wrap" aria-hidden="true">
+                        <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
+                          <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
+                        </svg>
+                        <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
+                          <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                    </a>
+                    </div>
+                  </td>
                   <td class="col-us">
                     <div class="cell-stack">
                     <span class="price">Starting at <span class="money" data-amount="1.50" data-ccy="USD">$1.50</span></span>
@@ -2373,10 +2706,26 @@
                     </a>
                     </div>
                   </td>
-                  <td class="col-sg" data-value="no"><span class="avail avail--no"><span aria-hidden="true">—</span><span class="sr-only">Not available</span></span></td>
+                  <td class="col-sg">
+                    <div class="cell-stack">
+                    <span class="price">Starting at <span class="money" data-amount="1.50" data-ccy="SGD">S$1.50</span></span>
+                    <span class="price-note">per payout</span>
+                    <a class="price-link" href="https://stripe.com/en-sg/payouts" target="_blank" rel="noopener noreferrer">
+                      Pricing details
+                      <span class="btn__chev-wrap" aria-hidden="true">
+                        <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
+                          <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
+                        </svg>
+                        <svg class="btn__chev btn__chev--hover" width="12" height="9" viewBox="0 0 12 9">
+                          <path d="M10.4697 3.63379L11.0811 4.25L10.4697 4.86621L6.86426 8.49902L5.62207 7.2666L7.74609 5.125L0 5.125L0 3.375L7.74805 3.375L5.62207 1.23242L6.86426 0L10.4697 3.63379Z" fill="currentColor" />
+                        </svg>
+                      </span>
+                    </a>
+                    </div>
+                  </td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Cards</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Cards</span>
                     <span class="product-desc">Create virtual and physical cards with 2% cashback on US business expenses, no foreign transaction fees, and flexible spend controls.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -2390,7 +2739,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk" data-value="no"><span class="avail avail--no"><span aria-hidden="true">—</span><span class="sr-only">Not available</span></span></td>
                   <td class="col-us">
                     <div class="cell-stack">
@@ -2427,7 +2776,7 @@
                   <td class="col-sg" data-value="no"><span class="avail avail--no"><span aria-hidden="true">—</span><span class="sr-only">Not available</span></span></td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Capital</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Capital</span>
                     <span class="product-desc">Access fast, flexible financing to invest in your business’s growth.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -2441,7 +2790,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk" data-value="no"><span class="avail avail--no"><span aria-hidden="true">—</span><span class="sr-only">Not available</span></span></td>
                   <td class="col-us">
                     <div class="cell-stack">
@@ -2465,6 +2814,7 @@
                 </tr>
               </tbody>
             </table>
+            </div>
           </div>
             </div>
 
@@ -2474,6 +2824,7 @@
                 <p class="capability-block__copy">Reach untapped buyers, pay out instantly across borders, build global financial services and unlock agentic revenue with crypto and stablecoin infrastructure.</p>
               </div>
               <div class="table-shell">
+            <div class="table-shell__scroller">
             <table class="cmp">
               <colgroup>
                 <col class="cmp__col-product" />
@@ -2494,7 +2845,7 @@
               </thead>
               <tbody>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Crypto Onramp</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Crypto Onramp</span>
                     <span class="product-desc">Let customers seamlessly buy crypto on your app or site. Stripe handles identity verification, compliance, and fraud prevention, end to end.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -2508,7 +2859,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk" data-value="no"><span class="avail avail--no"><span aria-hidden="true">—</span><span class="sr-only">Not available</span></span></td>
                   <td class="col-us">
                     <div class="cell-stack">
@@ -2530,7 +2881,7 @@
                   <td class="col-sg" data-value="no"><span class="avail avail--no"><span aria-hidden="true">—</span><span class="sr-only">Not available</span></span></td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Stablecoin payments</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Stablecoin payments</span>
                     <span class="product-desc">Reach untapped buyers and grow your customer base by offering crypto and stablecoin payments worldwide.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -2544,7 +2895,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk" data-value="no"><span class="avail avail--no"><span aria-hidden="true">—</span><span class="sr-only">Not available</span></span></td>
                   <td class="col-us">
                     <div class="cell-stack">
@@ -2567,7 +2918,7 @@
                   <td class="col-sg" data-value="no"><span class="avail avail--no"><span aria-hidden="true">—</span><span class="sr-only">Not available</span></span></td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Stablecoin payouts</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Stablecoin payouts</span>
                     <span class="product-desc">Send instant stablecoin payouts to 160+ countries for less than traditional cross-border transfers.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -2581,7 +2932,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk" data-value="no"><span class="avail avail--no"><span aria-hidden="true">—</span><span class="sr-only">Not available</span></span></td>
                   <td class="col-us">
                     <div class="cell-stack">
@@ -2603,7 +2954,7 @@
                   <td class="col-sg" data-value="no"><span class="avail avail--no"><span aria-hidden="true">—</span><span class="sr-only">Not available</span></span></td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Stablecoin-backed cards</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Stablecoin-backed cards</span>
                     <span class="product-desc">Launch a compliant stablecoin-backed card program globally with a single integration and earn interchange on every transaction.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -2617,7 +2968,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk" data-value="no"><span class="avail avail--no"><span aria-hidden="true">—</span><span class="sr-only">Not available</span></span></td>
                   <td class="col-us">
                     <div class="cell-stack">
@@ -2639,7 +2990,7 @@
                   <td class="col-sg" data-value="no"><span class="avail avail--no"><span aria-hidden="true">—</span><span class="sr-only">Not available</span></span></td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Orchestration by Bridge</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Orchestration by Bridge</span>
                     <span class="product-desc">Move money globally with stablecoins. Onramp, convert, and offramp across borders instantly and integrate into your existing funds flow.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -2653,7 +3004,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk">
                     <div class="cell-stack">
                     <span class="price">Talk to our sales team</span>
@@ -2720,7 +3071,7 @@
                   </td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Open Issuance by Bridge</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Open Issuance by Bridge</span>
                     <span class="product-desc">Launch and manage your own stablecoin. Create new financial experiences, maximize rewards, and build liquidity faster.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -2734,7 +3085,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk">
                     <div class="cell-stack">
                     <span class="price">Talk to our sales team</span>
@@ -2801,7 +3152,7 @@
                   </td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Embedded wallets by Privy</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Embedded wallets by Privy</span>
                     <span class="product-desc">Launch secure wallet and account experiences for global payments, trading, and programmable financial applications.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -2815,7 +3166,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk">
                     <div class="cell-stack">
                     <span class="price">Talk to our sales team</span>
@@ -2884,6 +3235,7 @@
                 </tr>
               </tbody>
             </table>
+            </div>
           </div>
             </div>
 
@@ -2892,6 +3244,7 @@
                 <h3 class="capability-block__title">More</h3>
               </div>
               <div class="table-shell">
+            <div class="table-shell__scroller">
             <table class="cmp">
               <colgroup>
                 <col class="cmp__col-product" />
@@ -2912,7 +3265,7 @@
               </thead>
               <tbody>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Workflows</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Workflows</span>
                     <span class="product-desc">Automate multi-step business processes across Stripe products and third-party applications without writing code.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -2926,10 +3279,10 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk">
                     <div class="cell-stack">
-                    <span class="avail avail--yes"><img class="avail__icon" src="assets/icons/check-included.svg" width="16" height="16" alt="" /> Included</span>
+                    <span class="price">Included</span>
                     <span class="price-note">10,000 steps / month · <span class="money" data-amount="0.14" data-ccy="HKD">HK$0.14</span> extra</span>
                     <a class="price-link" href="https://stripe.com/en-hk/workflows" target="_blank" rel="noopener noreferrer">
                       Pricing details
@@ -2965,7 +3318,7 @@
                   </td>
                   <td class="col-gb">
                     <div class="cell-stack">
-                    <span class="avail avail--yes"><img class="avail__icon" src="assets/icons/check-included.svg" width="16" height="16" alt="" /> Included</span>
+                    <span class="price">Included</span>
                     <span class="price-note">10,000 steps / month</span>
                     <a class="price-link" href="https://stripe.com/en-gb/workflows" target="_blank" rel="noopener noreferrer">
                       Pricing details
@@ -2982,7 +3335,7 @@
                   </td>
                   <td class="col-sg">
                     <div class="cell-stack">
-                    <span class="avail avail--yes"><img class="avail__icon" src="assets/icons/check-included.svg" width="16" height="16" alt="" /> Included</span>
+                    <span class="price">Included</span>
                     <span class="price-note">10,000 steps / month · <span class="money" data-amount="0.023" data-ccy="SGD">S$0.023</span> extra</span>
                     <a class="price-link" href="https://stripe.com/en-sg/workflows" target="_blank" rel="noopener noreferrer">
                       Pricing details
@@ -2999,7 +3352,7 @@
                   </td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Climate</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Climate</span>
                     <span class="product-desc">Direct a portion of revenue to vetted carbon removal projects—not offsets—with one line of code or a Dashboard toggle.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -3013,7 +3366,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk" data-value="no"><span class="avail avail--no"><span aria-hidden="true">—</span><span class="sr-only">Not available</span></span></td>
                   <td class="col-us">
                     <div class="cell-stack">
@@ -3051,7 +3404,7 @@
                   <td class="col-sg" data-value="no"><span class="avail avail--no"><span aria-hidden="true">—</span><span class="sr-only">Not available</span></span></td>
                 </tr>
 <tr class="cmp__row--links">
-                  <th class="col-product" scope="row"><span class="product-name">Atlas</span>
+                  <th class="col-product" scope="row"><div class="cell-stack"><span class="product-name">Atlas</span>
                     <span class="product-desc">Form a US C corporation or LLC from anywhere in the world, and start fundraising using SAFEs.</span>
                     <a class="btn btn--primary btn--compact" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener noreferrer">
                       <span class="btn__inner">
@@ -3065,7 +3418,7 @@
                           </svg>
                         </span>
                       </span>
-                    </a></th>
+                    </a></div></th>
                   <td class="col-hk">
                     <div class="cell-stack">
                     <span class="price"><span class="money" data-amount="500" data-ccy="USD">US$500</span></span>
@@ -3137,14 +3490,14 @@
                 </tr>
               </tbody>
             </table>
+            </div>
           </div>
             </div>
           </div>
           </div>
         </div>
+          <div class="capabilities-veil" aria-hidden="true"></div>
       </section>
-
-      <section class="faq-band" aria-labelledby="faq-band-heading">
         <div class="faq-band__wrap">
           <div class="faq-band__grid">
             <header class="faq-band__intro">
@@ -3358,12 +3711,12 @@
     <aside class="version-switch" aria-label="Page version">
       <p class="version-switch__kicker">Version</p>
       <div class="version-switch__toggle">
-        <a class="version-switch__btn is-active" href="index.html" aria-current="page">V1</a>
+        <a class="version-switch__btn" href="index.html">V1</a>
         <a class="version-switch__btn" href="v2.html">V2</a>
-        <a class="version-switch__btn" href="v3.html">V3</a>
+        <a class="version-switch__btn is-active" href="v3.html" aria-current="page">V3</a>
       </div>
     </aside>
 
-    <script src="main.js?v=compare-two-2"></script>
+    <script src="main-v3.js?v=v3-seam-shadow"></script>
   </body>
 </html>
