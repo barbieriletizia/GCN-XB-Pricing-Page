@@ -81,8 +81,9 @@
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   overflow-x: clip;
+  overflow-y: auto;
 }
 
 body {
@@ -1260,7 +1261,8 @@ input {
   --capabilities-product: 380px;
   overflow-x: auto;
   overflow-y: hidden;
-  overscroll-behavior: none;
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: none;
   background: #fff;
 }
 

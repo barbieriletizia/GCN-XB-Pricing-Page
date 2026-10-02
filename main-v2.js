@@ -332,4 +332,92 @@
     slots[slot] = next;
     applySlots();
   });
+
+  document.addEventListener("click", function (event) {
+    var wrap = event.target.closest(".country-card .compare-select-wrap");
+    if (!wrap) return;
+    var select = wrap.querySelector("select");
+    if (!select || event.target === select) return;
+    if (typeof select.showPicker === "function") {
+      try {
+        select.showPicker();
+      } catch (err) {
+        select.focus();
+      }
+    } else {
+      select.focus();
+    }
+  });
+
+  function wheelDeltaPx(event, axis) {
+    var value = axis === "x" ? event.deltaX : event.deltaY;
+    if (event.deltaMode === 1) value *= 16;
+    else if (event.deltaMode === 2) {
+      value *= axis === "x" ? window.innerWidth : window.innerHeight;
+    }
+    return value;
+  }
+
+  var tableWheelAxis = "";
+  var tableWheelAt = 0;
+  var pendingDy = 0;
+  var pageScrollRaf = 0;
+
+  function scrollPageBy(dy) {
+    if (!dy) return;
+    var html = document.documentElement;
+    var scrollerEl = document.scrollingElement || html;
+    var before = scrollerEl.scrollTop;
+    window.scrollBy({ top: dy, left: 0, behavior: "instant" });
+    if (Math.abs((document.scrollingElement || html).scrollTop - before) >= 0.5) {
+      return;
+    }
+    scrollerEl.scrollTop = before + dy;
+    if (Math.abs(scrollerEl.scrollTop - before) >= 0.5) return;
+    try {
+      if (window.parent && window.parent !== window) {
+        window.parent.scrollBy({ top: dy, left: 0, behavior: "instant" });
+      }
+    } catch (err) {}
+  }
+
+  function flushPageScroll() {
+    pageScrollRaf = 0;
+    var dy = pendingDy;
+    pendingDy = 0;
+    scrollPageBy(dy);
+  }
+
+  document.querySelectorAll(".table-shell__scroller").forEach(function (scroller) {
+    scroller.addEventListener(
+      "wheel",
+      function (event) {
+        if (event.ctrlKey || event.metaKey) return;
+
+        var dx = wheelDeltaPx(event, "x");
+        var dy = wheelDeltaPx(event, "y");
+        if (event.shiftKey && dy && !dx) {
+          dx = dy;
+          dy = 0;
+        }
+
+        var now = Date.now();
+        if (!tableWheelAxis || now - tableWheelAt > 160) {
+          if (Math.abs(dx) > Math.abs(dy)) tableWheelAxis = "x";
+          else if (dy) tableWheelAxis = "y";
+          else return;
+        }
+        tableWheelAt = now;
+
+        if (tableWheelAxis === "x") return;
+
+        event.preventDefault();
+        pendingDy += dy;
+        if (!pageScrollRaf) {
+          pageScrollRaf = window.requestAnimationFrame(flushPageScroll);
+        }
+      },
+      { passive: false }
+    );
+  });
 })();
