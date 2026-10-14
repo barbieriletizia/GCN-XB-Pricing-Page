@@ -714,7 +714,7 @@ input {
 .country-card {
   display: grid;
   grid-template-rows: subgrid;
-  grid-row: span 5;
+  grid-row: span 6;
   min-width: 0;
   padding: 20px;
   border: 1px solid var(--color-border);
@@ -783,6 +783,12 @@ input {
   line-height: 20px;
 }
 
+.country-card .price-note--sm {
+  font-size: 14px;
+  line-height: 20px;
+  color: #7d8ba4;
+}
+
 .country-card__cta {
   display: flex;
   flex-direction: column;
@@ -795,13 +801,25 @@ input {
 .country-card__cta .btn {
   display: flex;
   width: 100%;
-  height: 40px;
+  max-width: 100%;
+  height: auto;
   min-height: 40px;
   box-sizing: border-box;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 14px;
+  white-space: normal;
+  text-align: center;
+}
+
+.country-card__cta .btn__inner {
+  flex-wrap: wrap;
+  justify-content: center;
+  line-height: 1.2;
 }
 
 .country-card__cta .btn--secondary {
-  white-space: nowrap;
+  white-space: normal;
   font-size: 14px;
 }
 

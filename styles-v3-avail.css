@@ -1,0 +1,99 @@
+/* V3 country cards: availability checkmarks instead of fee breakdown */
+
+.country-card--avail {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-row: span 3;
+}
+
+.country-card--avail .country-card__head,
+.country-card--avail .country-card__block,
+.country-card--avail .country-card__cta {
+  min-width: 0;
+  width: 100%;
+}
+
+.country-card--avail .country-card__title {
+  color: var(--navy);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.country-card--avail .country-card__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-top: 0;
+  min-height: calc(20px + 40px + 8px + 40px);
+}
+
+.country-card--avail .country-card__cta .btn {
+  width: 100%;
+  max-width: none;
+  flex: none;
+}
+
+.country-card__avail {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  gap: 10px;
+}
+
+.country-card--avail .country-card__label {
+  max-width: 100%;
+  color: var(--navy);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.country-card__avail .avail {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  color: var(--navy);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.country-card__avail .avail__copy {
+  min-width: 0;
+}
+
+.country-card__avail .avail--no {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.country-card__avail .avail__icon {
+  display: block;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.country-card__avail .avail__mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: #50617a;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.country-card__avail .avail--limited .pill {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+

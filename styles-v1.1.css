@@ -1,0 +1,304 @@
+/* v1.1: v2-style 4-column capabilities table */
+
+html {
+  scroll-behavior: auto;
+  overflow-x: clip;
+  overflow-y: auto;
+}
+
+#capabilities .cmp thead {
+  visibility: visible;
+}
+
+#capabilities .cmp thead th {
+  color: #061b31;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22.4px;
+  border-top: 1px solid #e5edf5;
+}
+
+#capabilities .section-head {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+}
+
+#capabilities .section-head::after {
+  content: "";
+  position: absolute;
+  right: calc(-1 * var(--gutter));
+  bottom: 0;
+  left: calc(-1 * var(--gutter));
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    var(--color-border) 0,
+    var(--color-border) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  background-size: 4px 1px;
+  background-repeat: repeat-x;
+  pointer-events: none;
+}
+
+#capabilities .compare-search {
+  flex: 0 1 374px;
+  width: 374px;
+  max-width: 100%;
+  margin-left: auto;
+}
+
+#capabilities .capability-block__head {
+  width: min(100%, 560px);
+  max-width: min(100%, 560px);
+}
+
+#payments-area,
+#risk-area,
+#revenue-area,
+#money-area,
+#embedded-area,
+#crypto-area,
+#more-area {
+  scroll-margin-top: 24px;
+}
+
+#capabilities .table-shell {
+  position: relative;
+  overflow: hidden;
+  width: calc(100% + var(--gutter));
+  margin-right: calc(-1 * var(--gutter));
+  border-top: 0;
+  border-bottom: 0;
+  border-right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#capabilities .table-shell__scroller {
+  --capabilities-product: 380px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: none;
+  background: #fff;
+}
+
+#capabilities .table-shell__scroller .cmp {
+  margin-right: var(--gutter);
+}
+
+#capabilities .table-shell::after {
+  content: "";
+  position: absolute;
+  z-index: 7;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 56px;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.15s ease;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.45) 40%,
+    rgba(255, 255, 255, 0.92) 100%
+  );
+}
+
+#capabilities .table-shell.is-at-end::after {
+  opacity: 0;
+}
+
+#capabilities .table-shell.is-at-end .cmp .is-last-compare-col {
+  border-right: 1px solid #e5edf5;
+}
+
+#capabilities .table-shell.is-at-end .cmp thead th.is-last-compare-col {
+  border-top-right-radius: 6px;
+}
+
+#capabilities .table-shell.is-at-end .cmp tbody tr:last-child td.is-last-compare-col {
+  border-bottom-right-radius: 6px;
+}
+
+#capabilities .cmp {
+  --capabilities-product: 380px;
+  --capabilities-peek: 80px;
+  table-layout: fixed;
+  width: calc(
+    var(--capabilities-product) +
+      (100% - var(--capabilities-product) - var(--capabilities-peek)) * 4 / 3
+  );
+  min-width: calc(
+    var(--capabilities-product) +
+      (100% - var(--capabilities-product) - var(--capabilities-peek)) * 4 / 3
+  );
+}
+
+#capabilities .cmp .col-product,
+#capabilities .cmp__col-product {
+  width: var(--capabilities-product);
+  min-width: var(--capabilities-product);
+  max-width: var(--capabilities-product);
+}
+
+#capabilities .cmp .col-hk,
+#capabilities .cmp .col-us,
+#capabilities .cmp .col-gb,
+#capabilities .cmp .col-sg,
+#capabilities .cmp__col-hk,
+#capabilities .cmp__col-us,
+#capabilities .cmp__col-gb,
+#capabilities .cmp__col-sg {
+  width: calc((100% - var(--capabilities-product)) / 4);
+  min-width: 0;
+  max-width: none;
+}
+
+#capabilities .cmp .col-hk,
+#capabilities .cmp .col-us,
+#capabilities .cmp .col-gb,
+#capabilities .cmp .col-sg {
+  display: table-cell;
+}
+
+#capabilities .cmp .cmp__col-hk,
+#capabilities .cmp .cmp__col-us,
+#capabilities .cmp .cmp__col-gb,
+#capabilities .cmp .cmp__col-sg {
+  display: table-column;
+}
+
+#capabilities .cmp .col-product {
+  overflow: visible;
+  box-shadow: none;
+  border-left: 0;
+}
+
+#capabilities .table-edge-shadow {
+  position: sticky;
+  left: 0;
+  width: calc(var(--capabilities-product) + 24px);
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 4;
+}
+
+#capabilities .table-edge-shadow::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  bottom: -40px;
+  left: 0;
+  width: var(--capabilities-product);
+  box-shadow:
+    5px 0 14px 0 rgba(0, 55, 112, 0.08),
+    2px 0 8px 0 rgba(0, 59, 137, 0.05);
+}
+
+#capabilities .cmp tbody th,
+#capabilities .cmp tbody td {
+  padding: 24px;
+  padding-left: 16px;
+}
+
+#capabilities .cmp tbody tr:last-child th,
+#capabilities .cmp tbody tr:last-child td {
+  border-bottom: 1px solid #e5edf5;
+}
+
+#capabilities .cmp thead .col-product,
+#capabilities .cmp thead .col-hk,
+#capabilities .cmp thead .col-us,
+#capabilities .cmp thead .col-gb,
+#capabilities .cmp thead .col-sg {
+  background: #f8fafd;
+}
+
+#capabilities .cmp tbody td.col-hk,
+#capabilities .cmp tbody td.col-us,
+#capabilities .cmp tbody td.col-gb,
+#capabilities .cmp tbody td.col-sg {
+  background: #fff;
+}
+
+#capabilities .table-shell .cmp thead .col-product {
+  border-top-left-radius: 6px;
+}
+
+#capabilities .table-shell .cmp tbody tr:first-child th:first-child {
+  border-top-left-radius: 0;
+}
+
+#capabilities .table-shell .cmp tbody tr:last-child th:first-child {
+  border-bottom-left-radius: 6px;
+}
+
+#capabilities .table-shell .cmp tbody tr:first-child td.is-last-compare-col,
+#capabilities .table-shell .cmp tbody tr:last-child td.is-last-compare-col {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#capabilities .cmp tbody td.col-hk,
+#capabilities .cmp tbody td.col-us,
+#capabilities .cmp tbody td.col-gb,
+#capabilities .cmp tbody td.col-sg,
+#capabilities .cmp thead th.col-hk,
+#capabilities .cmp thead th.col-us,
+#capabilities .cmp thead th.col-gb,
+#capabilities .cmp thead th.col-sg {
+  position: relative;
+}
+
+#capabilities .cmp tbody td.col-hk::before,
+#capabilities .cmp tbody td.col-us::before,
+#capabilities .cmp tbody td.col-gb::before,
+#capabilities .cmp tbody td.col-sg::before,
+#capabilities .cmp thead th.col-hk::before,
+#capabilities .cmp thead th.col-us::before,
+#capabilities .cmp thead th.col-gb::before,
+#capabilities .cmp thead th.col-sg::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 0;
+  width: 1px;
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-border) 0,
+    var(--color-border) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  background-size: 1px 4px;
+  background-repeat: repeat-y;
+  pointer-events: none;
+}
+
+#capabilities .cmp tbody td.is-first-compare-col::before,
+#capabilities .cmp thead th.is-first-compare-col::before {
+  content: none;
+}
+
+@media (max-width: 640px) {
+  #capabilities .section-head {
+    flex-wrap: wrap;
+  }
+
+  #capabilities .compare-search {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+}

@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
     <title>Compare pricing by country · Stripe</title>
-    <link rel="stylesheet" href="styles.css?v=no-playground" />
-    <link rel="stylesheet" href="version-switch.css?v=left-pad-16" />
+    <link rel="stylesheet" href="styles.css?v=note-sm" />
+    <link rel="stylesheet" href="version-switch.css?v=v11" />
   </head>
   <body class="cols-hk cols-us">
     <header class="home-header site-header">
@@ -132,8 +132,8 @@
               <label class="currency-switcher__label" for="currency-select">Show prices in</label>
               <div class="currency-switcher__control">
                 <select id="currency-select" data-currency-select>
-                  <option value="local" selected>Local currency</option>
-                  <option value="USD">USD · US dollar</option>
+                  <option value="local">Local currency</option>
+                  <option value="USD" selected>USD · US dollar</option>
                   <option value="HKD">HKD · Hong Kong dollar</option>
                   <option value="GBP">GBP · British pound</option>
                   <option value="SGD">SGD · Singapore dollar</option>
@@ -150,22 +150,28 @@
               <div class="country-card__block">
                 <h4 class="country-card__label">Payments</h4>
                 <p class="price">3.4% + <span class="money" data-amount="2.35" data-ccy="HKD">HK$2.35</span></p>
-                <p class="price-note">per successful transaction for domestic cards</p>
+                <p class="price-note">per successful transaction</p>
+                <p class="price-note price-note--sm">for domestic cards</p>
               </div>
               <div class="country-card__block">
                 <h4 class="country-card__label">Managed Payments</h4>
                 <p class="price">+ 3.5%</p>
-                <p class="price-note">per successful Managed Payments transaction</p>
+                <p class="price-note">per successful transaction</p>
               </div>
               <div class="country-card__block">
                 <h4 class="country-card__label">Global Payouts</h4>
-                <p class="price">Starting at <span class="money" data-amount="1.50" data-ccy="USD">$1.50</span></p>
+                <p class="price">Starting at <span class="money" data-amount="1.50" data-ccy="HKD">HK$1.50</span></p>
                 <p class="price-note">per payout</p>
+              </div>
+              <div class="country-card__block">
+                <h4 class="country-card__label">Treasury</h4>
+                <p class="price">No monthly fee</p>
+                <p class="price-note">with zero minimum balance required</p>
               </div>
               <div class="country-card__cta">
                 <a class="btn btn--primary btn--lg" href="https://dashboard.stripe.com/register?country=HK" target="_blank" rel="noopener noreferrer">
                   <span class="btn__inner">
-                    Start now
+                    Get started in Hong Kong
                     <span class="btn__chev-wrap" aria-hidden="true">
                       <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
                         <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
@@ -186,22 +192,28 @@
               <div class="country-card__block">
                 <h4 class="country-card__label">Payments</h4>
                 <p class="price">2.9% + <span class="money" data-amount="0.30" data-ccy="USD">30¢</span></p>
-                <p class="price-note">per successful transaction for domestic cards</p>
+                <p class="price-note">per successful transaction</p>
+                <p class="price-note price-note--sm">for domestic cards</p>
               </div>
               <div class="country-card__block">
                 <h4 class="country-card__label">Managed Payments</h4>
                 <p class="price">+ 3.5%</p>
-                <p class="price-note">per successful Managed Payments transaction</p>
+                <p class="price-note">per successful transaction</p>
               </div>
               <div class="country-card__block">
                 <h4 class="country-card__label">Global Payouts</h4>
                 <p class="price">Starting at <span class="money" data-amount="1.50" data-ccy="USD">$1.50</span></p>
                 <p class="price-note">per payout</p>
               </div>
+              <div class="country-card__block">
+                <h4 class="country-card__label">Treasury</h4>
+                <p class="price">No monthly fee</p>
+                <p class="price-note">with zero minimum balance required</p>
+              </div>
               <div class="country-card__cta">
                 <a class="btn btn--primary btn--lg" href="https://dashboard.stripe.com/register?country=US" target="_blank" rel="noopener noreferrer">
                   <span class="btn__inner">
-                    Start now
+                    Get started in the US
                     <span class="btn__chev-wrap" aria-hidden="true">
                       <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
                         <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
@@ -227,22 +239,27 @@
                 <p class="price">1.5% + <span class="money" data-amount="0.20" data-ccy="GBP">20p</span></p>
                 <p class="price-note">for standard UK cards</p>
                 <p class="price">2.5% + <span class="money" data-amount="0.20" data-ccy="GBP">20p</span></p>
-                <p class="price-note">for EU Cards</p>
+                <p class="price-note">for international cards</p>
               </div>
               <div class="country-card__block">
                 <h4 class="country-card__label">Managed Payments</h4>
                 <p class="price">+ 3.5%</p>
-                <p class="price-note">per successful Managed Payments transaction</p>
+                <p class="price-note">per successful transaction</p>
               </div>
               <div class="country-card__block">
                 <h4 class="country-card__label">Global Payouts</h4>
-                <p class="price">Starting at <span class="money" data-amount="1.50" data-ccy="USD">$1.50</span></p>
+                <p class="price"><span class="money" data-amount="0.50" data-ccy="GBP">£0.50</span></p>
                 <p class="price-note">per payout</p>
+              </div>
+              <div class="country-card__block">
+                <h4 class="country-card__label">Treasury</h4>
+                <p class="price">No monthly fee</p>
+                <p class="price-note">with zero minimum balance required</p>
               </div>
               <div class="country-card__cta">
                 <a class="btn btn--primary btn--lg" href="https://dashboard.stripe.com/register?country=GB" target="_blank" rel="noopener noreferrer">
                   <span class="btn__inner">
-                    Start now
+                    Get started in the UK
                     <span class="btn__chev-wrap" aria-hidden="true">
                       <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
                         <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
@@ -266,22 +283,28 @@
               <div class="country-card__block">
                 <h4 class="country-card__label">Payments</h4>
                 <p class="price">3.4% + <span class="money" data-amount="0.50" data-ccy="SGD">S$0.50</span></p>
-                <p class="price-note">per successful transaction for domestic cards</p>
+                <p class="price-note">per successful transaction</p>
+                <p class="price-note price-note--sm">for domestic cards</p>
               </div>
               <div class="country-card__block">
                 <h4 class="country-card__label">Managed Payments</h4>
                 <p class="price">+ 3.5%</p>
-                <p class="price-note">per successful Managed Payments transaction</p>
+                <p class="price-note">per successful transaction</p>
               </div>
               <div class="country-card__block">
                 <h4 class="country-card__label">Global Payouts</h4>
-                <p class="price">Starting at <span class="money" data-amount="1.50" data-ccy="USD">$1.50</span></p>
+                <p class="price">Starting at <span class="money" data-amount="1.50" data-ccy="SGD">S$1.50</span></p>
                 <p class="price-note">per payout</p>
+              </div>
+              <div class="country-card__block">
+                <h4 class="country-card__label">Treasury</h4>
+                <p class="price">No monthly fee</p>
+                <p class="price-note">with zero minimum balance required</p>
               </div>
               <div class="country-card__cta">
                 <a class="btn btn--primary btn--lg" href="https://dashboard.stripe.com/register?country=SG" target="_blank" rel="noopener noreferrer">
                   <span class="btn__inner">
-                    Start now
+                    Get started in Singapore
                     <span class="btn__chev-wrap" aria-hidden="true">
                       <svg class="btn__chev btn__chev--idle" width="6" height="9" viewBox="0 0 6 9">
                         <path d="M4.84766 3.63379L5.45898 4.25L4.84766 4.86621L1.24219 8.49902L0 7.2666L2.99316 4.24902L0 1.23242L1.24219 0L4.84766 3.63379Z" fill="currentColor" />
@@ -566,7 +589,7 @@
                     </a></th>
                   <td class="col-hk">
                     <div class="cell-stack">
-<span class="price">+ 3.5%</span><span class="price-note">per successful Managed Payments transaction</span>
+<span class="price">+ 3.5%</span><span class="price-note">per successful transaction</span>
                     <a class="price-link" href="https://stripe.com/en-hk/managed-payments" target="_blank" rel="noopener noreferrer">
                       Pricing details
                       <span class="btn__chev-wrap" aria-hidden="true">
@@ -583,7 +606,7 @@
                   <td class="col-us">
                     <div class="cell-stack">
                     <span class="price">3.5%</span>
-                    <span class="price-note">per successful Managed Payments transaction</span>
+                    <span class="price-note">per successful transaction</span>
                     <a class="price-link" href="https://stripe.com/managed-payments" target="_blank" rel="noopener noreferrer">
                       Pricing details
                       <span class="btn__chev-wrap" aria-hidden="true">
@@ -599,7 +622,7 @@
                   </td>
                   <td class="col-gb">
                     <div class="cell-stack">
-<span class="price">+ 3.5%</span><span class="price-note">per successful Managed Payments transaction</span>
+<span class="price">+ 3.5%</span><span class="price-note">per successful transaction</span>
                     <a class="price-link" href="https://stripe.com/en-gb/managed-payments" target="_blank" rel="noopener noreferrer">
                       Pricing details
                       <span class="btn__chev-wrap" aria-hidden="true">
@@ -615,7 +638,7 @@
                   </td>
                   <td class="col-sg">
                     <div class="cell-stack">
-<span class="price">+ 3.5%</span><span class="price-note">per successful Managed Payments transaction</span>
+<span class="price">+ 3.5%</span><span class="price-note">per successful transaction</span>
                     <a class="price-link" href="https://stripe.com/en-sg/managed-payments" target="_blank" rel="noopener noreferrer">
                       Pricing details
                       <span class="btn__chev-wrap" aria-hidden="true">
@@ -3359,11 +3382,12 @@
       <p class="version-switch__kicker">Version</p>
       <div class="version-switch__toggle">
         <a class="version-switch__btn is-active" href="index.html" aria-current="page">V1</a>
+        <a class="version-switch__btn" href="v1.1.html">V1.1</a>
         <a class="version-switch__btn" href="v2.html">V2</a>
         <a class="version-switch__btn" href="v3.html">V3</a>
       </div>
     </aside>
 
-    <script src="main.js?v=compare-two-2"></script>
+    <script src="main.js?v=usd-default"></script>
   </body>
 </html>

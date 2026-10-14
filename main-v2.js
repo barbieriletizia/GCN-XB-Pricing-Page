@@ -420,4 +420,36 @@
       { passive: false }
     );
   });
+
+  function scrollJumpTarget(target) {
+    var scroller = target.closest(".table-shell__scroller");
+    target.scrollIntoView({ block: "start", inline: "nearest", behavior: "smooth" });
+    if (!scroller) return;
+    window.requestAnimationFrame(function () {
+      var scrollerRect = scroller.getBoundingClientRect();
+      var cellRect = target.getBoundingClientRect();
+      var sticky = scroller.querySelector(".col-product");
+      var leftBound = sticky ? sticky.getBoundingClientRect().right + 12 : scrollerRect.left + 12;
+      var rightBound = scrollerRect.right - 16;
+      if (cellRect.left < leftBound) {
+        scroller.scrollLeft -= leftBound - cellRect.left;
+      } else if (cellRect.right > rightBound) {
+        scroller.scrollLeft += cellRect.right - rightBound;
+      }
+    });
+  }
+
+  document.querySelectorAll(".country-card .price-link--jump").forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      var href = link.getAttribute("href") || "";
+      if (href.charAt(0) !== "#") return;
+      var target = document.getElementById(href.slice(1));
+      if (!target) return;
+      event.preventDefault();
+      scrollJumpTarget(target);
+      if (history.replaceState) {
+        history.replaceState(null, "", href);
+      }
+    });
+  });
 })();

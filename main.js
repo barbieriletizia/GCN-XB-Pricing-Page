@@ -53,6 +53,7 @@
     currencySelect.addEventListener("change", function () {
       applyCurrency(currencySelect.value);
     });
+    applyCurrency(currencySelect.value);
   }
 
   var menuBtn = document.querySelector("[data-menu-toggle]");

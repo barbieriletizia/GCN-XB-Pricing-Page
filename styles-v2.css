@@ -944,6 +944,15 @@ input {
   padding-top: 8px;
 }
 
+.country-card .price-link--jump .btn__arrow-wrap {
+  width: 12px;
+  height: 10px;
+}
+
+#capabilities td[id^="cap-"] {
+  scroll-margin-top: 24px;
+}
+
 .country-card__item + .country-card__item {
   padding-top: 16px;
 }
@@ -1004,14 +1013,25 @@ input {
 .country-card__cta .btn {
   display: flex;
   width: 100%;
-  height: 40px;
+  max-width: 100%;
+  height: auto;
   min-height: 40px;
   box-sizing: border-box;
+  padding-left: 12px;
+  padding-right: 12px;
   font-size: 16px;
+  white-space: normal;
+  text-align: center;
+}
+
+.country-card__cta .btn__inner {
+  flex-wrap: wrap;
+  justify-content: center;
+  line-height: 1.2;
 }
 
 .country-card__cta .btn--secondary {
-  white-space: nowrap;
+  white-space: normal;
   font-size: 16px;
 }
 
